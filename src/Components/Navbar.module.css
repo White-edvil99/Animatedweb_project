@@ -1,0 +1,31 @@
+.navitem{
+    position: relative;
+    cursor: pointer;
+}
+.navitem::after{
+    content: "";
+    position: absolute;
+    left: 0px;
+    bottom: 1px;
+    height: 1.5px;
+    width: 100%;
+    border-radius: 3px;
+    transition: width 0.1s ease, transform 0.1s ease;
+    transform: scaleX(0);
+    transform-origin: right;
+    background-color: #004D43;;
+}
+
+.navitem:hover::after{
+    transform: scaleX(1);
+    transform-origin: right;
+    background-color: #004D43;
+}
+
+.navitem::after{
+    transition:  transform 0.3s ease, transform-origin 0s 0.3s;
+}
+.navitem:not(:hover)::after{
+    transform: scaleX(0);
+    transform-origin: left;
+}
